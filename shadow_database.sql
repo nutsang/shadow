@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2024 at 01:37 PM
+-- Generation Time: Feb 08, 2024 at 11:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `account` (
   `email` varchar(3072) NOT NULL,
   `username` longtext NOT NULL,
+  `avatar` longtext NOT NULL,
   `role` tinyint(1) NOT NULL,
   `gacha_count` bigint(20) NOT NULL,
   `create_at` datetime NOT NULL DEFAULT current_timestamp(),
