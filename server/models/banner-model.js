@@ -23,9 +23,9 @@ module.exports.bannerSelect = (request, response) => {
 }
 
 module.exports.bannerUpdate = (request, response) => {
-    const { uuid } = request.body
+    const requestUUID = request.body.uuid
     const requestInformation = `${request.file.destination}/${request.file.filename}`
-    connection.query('UPDATE banner SET information = ?, update_at = ? WHERE uuid = ?', [requestInformation, Date.now(), uuid], (error, result) => {
+    connection.query('UPDATE banner SET information = ?, update_at = ? WHERE uuid = ?', [requestInformation, Date.now(), requestUUID], (error, result) => {
         if(error){
             response.status(200).json({status: false, payload: error})
         }else{
@@ -35,8 +35,8 @@ module.exports.bannerUpdate = (request, response) => {
 }
 
 module.exports.bannerDelete = (request, response) => {
-    const { uuid } = request.body
-    connection.query('DELETE FROM banner WHERE uuid = ?', [uuid], (error, result) => {
+    const requestUUID = request.body.uuid
+    connection.query('DELETE FROM banner WHERE uuid = ?', [requestUUID], (error, result) => {
         if(error){
             response.status(200).json({status: false, payload: error})
         }else{
