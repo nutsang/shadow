@@ -19,7 +19,6 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(morgan('dev'))
-
 app.use('/api',accountRoute)
 app.use('/api',auctionProductRoute)
 app.use('/api',bannerRoute)
