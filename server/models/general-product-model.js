@@ -40,7 +40,6 @@ module.exports.updateGeneralProduct = (request, response) => {
         if (error) {
             response.status(200).json({ status: false, payload: '' })
         } else {
-            console.log(`uuid: ${uuid}, name: ${name}, gameName: ${gameName}, normalPrice: ${normalPrice}, specialPrice: ${specialPrice}, information: ${information}, description: ${description}`)
             response.status(200).json({ status: true, payload: 'แก้ไขสำเร็จ' })
         }
     })
