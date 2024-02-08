@@ -8,8 +8,8 @@ module.exports.createGeneralProduct = (request, response) => {
     const specialPrice = request.body.special_price
     const information = request.body.information
     const description = request.body.description
-    connection.query('INSERT INTO general_product (uuid, name , game_name , normal_price , special_price , information , description) VALUE(?,?,?,?,?,?,?)',
-        [uuid.v4(), name, gameName, normalPrice, specialPrice, information, description], (error, result) => {
+    connection.query('INSERT INTO general_product (uuid, name , game_name , normal_price , special_price , information , description, create_at) VALUE(?,?,?,?,?,?,?,?)',
+        [uuid.v4(), name, gameName, normalPrice, specialPrice, information, description,Date.now()], (error, result) => {
             if (error) {
                 response.status(200).json({ status: false, payload: '' })
             } else {

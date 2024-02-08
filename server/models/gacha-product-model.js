@@ -8,8 +8,8 @@ module.exports.createGachaProduct = (request, response) => {
     const guarantee = request.body.guarantee_status
     const information = request.body.information
     const description = request.body.description
-    connection.query('INSERT INTO gacha_product (uuid, name , game_name , chance , guarantee_status , information , description) VALUE(?,?,?,?,?,?,?)',
-        [uuid.v4(), name, gameName, chance, guarantee, information, description], (error, result) => {
+    connection.query('INSERT INTO gacha_product (uuid, name , game_name , chance , guarantee_status , information , description, create_at) VALUE(?,?,?,?,?,?,?,?)',
+        [uuid.v4(), name, gameName, chance, guarantee, information, description,Date.now()], (error, result) => {
             if (error) {
                 response.status(200).json({ status: false, payload: '' })
             } else {
