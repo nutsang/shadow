@@ -1,15 +1,15 @@
 const connection = require('./connection')
 const uuid = require('uuid')
 
-module.exports.createGachaProduct = (request, response) => {
+module.exports.createGeneralProduct = (request, response) => {
     const name = request.body.name
     const gameName = request.body.game_name
-    const chance = request.body.chance
-    const guarantee = request.body.guarantee_status
+    const normalPrice = request.body.normal_price
+    const specialPrice = request.body.special_price
     const information = request.body.information
     const description = request.body.description
-    connection.query('INSERT INTO gacha_product (uuid, name , game_name , chance , guarantee_status , information , description, create_at) VALUE(?,?,?,?,?,?,?,?)',
-        [uuid.v4(), name, gameName, chance, guarantee, information, description,Date.now()], (error, result) => {
+    connection.query('INSERT INTO general_product (uuid, name , game_name , normal_price , special_price , information , description, create_at) VALUE(?,?,?,?,?,?,?,?)',
+        [uuid.v4(), name, gameName, normalPrice, specialPrice, information, description,Date.now()], (error, result) => {
             if (error) {
                 response.status(200).json({ status: false, payload: '' })
             } else {
@@ -18,8 +18,8 @@ module.exports.createGachaProduct = (request, response) => {
         })
 }
 
-module.exports.readGachaProduct = (request, response) => {
-    connection.query('SELECT game_name , name , chance FROM gacha_product', [], (error, result) => {
+module.exports.readGeneralProduct = (request, response) => {
+    connection.query('SELECT game_name , name , special_price , normal_price , special_price_status FROM general_product', [], (error, result) => {
         if (error) {
             response.status(200).json({ status: false, payload: [] })
         } else {
@@ -28,15 +28,15 @@ module.exports.readGachaProduct = (request, response) => {
     })
 }
 
-module.exports.updateGachaProduct = (request, response) => {
+module.exports.updateGeneralProduct = (request, response) => {
     const uuid = request.body.uuid
     const name = request.body.name
     const gameName = request.body.game_name
-    const chance = request.body.chance
-    const guarantee = request.body.guarantee_status
+    const normalPrice = request.body.normal_price
+    const specialPrice = request.body.special_price
     const information = request.body.information
     const description = request.body.description
-    connection.query('UPDATE gacha_product SET name = ? , game_name = ? , chance = ? , guarantee_status = ? , information = ? , description = ? , update_at = ? WHERE uuid = ? LIMIT 1', [name, gameName, chance, guarantee, information, description, Date.now(), uuid], (error, result) => {
+    connection.query('UPDATE general_product SET name = ? , game_name = ? , normal_price = ? , special_price = ? , information = ? , description = ? , update_at = ? WHERE uuid = ? LIMIT 1', [name, gameName, normalPrice, specialPrice, information, description, Date.now(), uuid], (error, result) => {
         if (error) {
             response.status(200).json({ status: false, payload: '' })
         } else {
@@ -45,9 +45,9 @@ module.exports.updateGachaProduct = (request, response) => {
     })
 }
 
-module.exports.deleteGachaProduct = (request, response) => {
+module.exports.deleteGeneralProduct = (request, response) => {
     const uuid = request.body.uuid
-    connection.query('DELETE FROM gacha_product WHERE uuid = ?', [uuid], (error, result) => {
+    connection.query('DELETE FROM general_product WHERE uuid = ?', [uuid], (error, result) => {
         if (error) {
             response.status(200).json({ status: false, payload: '' })
         } else {

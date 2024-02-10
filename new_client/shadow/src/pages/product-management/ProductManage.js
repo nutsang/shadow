@@ -251,7 +251,7 @@ const ProductManage = () => {
                 </DataTable>
             </div>
 
-            {/*ชื่อหัวข้อกาชาปอง + ปุ่ม */}
+            {/*ชื่อหัวข้อกาชา + ปุ่ม */}
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
                     <div className="text text-3xl text-primary">จัดการสินค้ากาชาปอง</div>
