@@ -3,6 +3,13 @@ import React,{ useEffect,useState } from 'react';
 import DataTable from 'react-data-table-component';
 
 const ProductManage = () => {
+    const [data_general,setData_general] = useState([])
+    const [record_general,setRecord_general] = useState(data_general)
+    const [data_gacha,setData_gacha] = useState([])
+    const [record_gacha,setRecord_gacha] = useState(data_gacha)
+    const [data_auction,setData_auction] = useState([])
+    const [record_auction,setRecord_auction] = useState(data_auction)
+
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/read-general-product`)
         .then((response) => {
@@ -197,12 +204,6 @@ const ProductManage = () => {
               ]
         },
     ]
-    const [data_general,setData_general] = useState([])
-    const [record_general,setRecord_general] = useState(data_general)
-    const [data_gacha,setData_gacha] = useState([])
-    const [record_gacha,setRecord_gacha] = useState(data_gacha)
-    const [data_auction,setData_auction] = useState([])
-    const [record_auction,setRecord_auction] = useState(data_auction)
 
 
     const handleClick = (title) => {

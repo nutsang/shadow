@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import ProductManagement from './pages/product-management/ProductManage'
 // import GeneralManage from './pages/general-management/GeneralManage';
+// import InsertGeneralProduct from './pages/insert-product/InsertGeneralProduct'
+// import InsertGachaProduct from './pages/insert-product/InsertGachaProduct';
+import InsertAuctionProduct from './pages/insert-product/InsertAuctionProduct';
+// import SignIn from './pages/Sign-in/SignIn';
 import reportWebVitals from './reportWebVitals';
 // import SignIn from './pages/Sign-in/SignIn';
 import NavbarGuest from './components/Navbar-guest';
@@ -12,7 +16,7 @@ import NavbarGuest from './components/Navbar-guest';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavbarGuest />
+    <InsertAuctionProduct/>
   </React.StrictMode>
 );
 
