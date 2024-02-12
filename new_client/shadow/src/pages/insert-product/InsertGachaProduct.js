@@ -28,7 +28,7 @@ const InsertGachaProduct = () => {
             <div className="grid mx-auto">
                 <InputProduct title='ชื่อสินค้า' type="text" placeholder="ชื่อสินค้า" className="input w-full max-w-xs bg-neutral " />
                 <Selection title="เกม" disabled='เกม' option={data_game_nameList} />
-                <Selection title="% การดรอป" disabled='เปอร์เซ็นต์การดรอป' option={data_game_nameList} />
+                <InputProduct title="% การดรอป" placeholder='เปอร์เซ็นต์การดรอป' option={data_game_nameList} />
                 <Selection title="การันตี" disabled='' option={data_game_nameList} />
                 <div className="flex flex-row mt-10 mx-44 w-4/12 gap-x-16"> 
                     <div className="text text-3xl text-secondary w-7/12 ">รูปภาพ</div>
