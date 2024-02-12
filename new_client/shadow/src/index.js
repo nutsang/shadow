@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import ProductManagement from './pages/product-management/ProductManage'
-import GeneralManage from './pages/general-management/GeneralManage';
+// import GeneralManage from './pages/general-management/GeneralManage';
 import reportWebVitals from './reportWebVitals';
+// import SignIn from './pages/Sign-in/SignIn';
+import NavbarGuest from './components/Navbar-guest';
+// import NavbarMember from './components/Navbar-member/';
+// import NavbarAdmin from './components/Navbar-admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GeneralManage/>
-
+    <NavbarGuest />
   </React.StrictMode>
 );
 
