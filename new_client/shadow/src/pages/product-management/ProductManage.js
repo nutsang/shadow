@@ -243,7 +243,7 @@ const ProductManage = () => {
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergeneral}></input></div>
                 <DataTable
                     columns={columns_genaral}
-                    data={data_general}
+                    data={record_general}
                     fixedHeader
                     pagination 
                 >
@@ -264,7 +264,7 @@ const ProductManage = () => {
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filtergacha}></input></div>
                 <DataTable
                     columns={columns_gacha}
-                    data={data_gacha}
+                    data={record_gacha}
                     fixedHeader
                     pagination 
                 >
@@ -285,7 +285,7 @@ const ProductManage = () => {
                 <div className='text-end'> <input type='text' placeholder='ชื่อสินค้าหรือชื่อเกม' onChange={filterauction}></input></div>
                 <DataTable
                     columns={columns_auction}
-                    data={data_auction}
+                    data={record_auction}
                     fixedHeader
                     pagination 
                 >
