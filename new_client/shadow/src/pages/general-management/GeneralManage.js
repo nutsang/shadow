@@ -153,7 +153,7 @@ const GeneralManage = () => {
     
 
     return(
-        <div className='container'>
+        <div className='container mx-auto'>
             {/*banner */}
             <div className="flex flex-col mt-10 mx-44">
                 <div className="flex flex-row">
@@ -169,6 +169,7 @@ const GeneralManage = () => {
                     data={data_game_name}
                     fixedHeader
                     pagination 
+                    paginationComponentOptions={paginationComponentOptions}
                 >
 
                 </DataTable>
