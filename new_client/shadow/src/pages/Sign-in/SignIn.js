@@ -1,6 +1,7 @@
 import InputBox from "../../components/input-box/InputBox";
 import React,{useState} from "react";
 
+
 const SignIn = () => {
 
     const [account ,setAccount] = useState({email:'', password:''})
